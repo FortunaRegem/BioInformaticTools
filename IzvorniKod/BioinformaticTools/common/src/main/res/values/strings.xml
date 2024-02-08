@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common strings -->
+    <string name="app_name">BioinformaticTools</string>
+    <string name="turn_on">Turn On</string>
+    <string name="back">Back</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="skip">Skip</string>
+    <string name="ok">OK</string>
+
+    <string name="sequence_aligner">Global\n        Sequence Aligner</string>
+    <string name="local_sequence_aligner">Local\n        Sequence Aligner</string>
+    <string name="match">Match:</string>
+    <string name="mismatch">Mismatch:</string>
+    <string name="gap">Gap:</string>
+    <string name="input_sequence_b">Input sequence b</string>
+    <string name="sequence_b">Sequence b:</string>
+    <string name="input_sequence_a">Input sequence a</string>
+    <string name="sequence_a">Sequence a:</string>
+    <string name="calculate_distance">Calculate Distance</string>
+    <string name="table">Table</string>
+    <string name="align">Align</string>
+    <string name="history">History</string>
+    <string name="show_history">Show history</string>
+    <string name="smallest_distance_found">Best global result:</string>
+    <string name="smallest_local_distance_found">Highest local similarity:</string>
+    <string name="clear_history">clear history</string>
+    <string name="distance">Distance</string>
+    <string name="similarity">Similarity</string>
+
+    <string name="minimizers">Sequence\n        Minimizers</string>
+    <string name="w">w:</string>
+    <string name="k">k:</string>
+    <string name="calculate_minimizers">Calculate minimizers</string>
+    <string name="input_sequence">Input sequence</string>
+    <string name="sequence">Sequence:</string>
+
+    <string name="fm_index">FM Index</string>
+    <string name="calculate_fmindex">Calculate FM Index</string>
+    <string name="pattern">Pattern:</string>
+    <string name="input_pattern">Input pattern</string>
+
+    <string name="suffix_tree_ukkonen">Suffix tree\n        Ukkonen\'s algorithm</string>
+    <string name="active_node">Active Node: </string>
+    <string name="active_edge">Active Edge: </string>
+    <string name="active_length">Active Length: </string>
+    <string name="reminder">Reminder: </string>
+    <string name="calculate_tree">Calculate tree</string>
+</resources>

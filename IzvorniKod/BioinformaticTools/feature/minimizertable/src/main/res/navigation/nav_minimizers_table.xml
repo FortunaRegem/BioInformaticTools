@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/nav_main.xml"
+	app:startDestination="@id/minimizersFragment">
+
+	<fragment
+		android:id="@+id/minimizersFragment"
+		android:name="hr.fer.minimizertable.ui.minimizers.view.MinimizersFragment"
+		android:label="MinimizersFragment" >
+		<action
+			android:id="@+id/action_minimizersFragment_to_historyFragment"
+			app:destination="@id/historyFragment" />
+		<action
+			android:id="@+id/action_minimizersFragment_to_tableFragment"
+			app:destination="@id/resultFragment" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/historyFragment"
+		android:name="hr.fer.minimizertable.ui.history.view.MinimizersHistoryFragment"
+		android:label="HistoryFragment" >
+		<action
+			android:id="@+id/action_historyFragment_to_resultFragment"
+			app:destination="@id/resultFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/resultFragment"
+		android:name="hr.fer.minimizertable.ui.result.view.ResultFragment"
+		android:label="TableFragment" >
+		<argument
+			android:name="sequence"
+			app:argType="string" />
+		<argument
+			android:name="w"
+			app:argType="integer" />
+		<argument
+			android:name="k"
+			app:argType="integer" />
+	</fragment>
+</navigation>

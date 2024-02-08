@@ -1,0 +1,7 @@
+android {
+    namespace = "hr.fer.network"
+}
+
+dependencies {
+    implementation libs.bundles.retrofit
+}

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:foreground="?android:attr/selectableItemBackground">
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelSequenceA"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"
+			android:layout_marginTop="20dp"
+			android:fontFamily="@font/fira_code_semi_bold"
+			android:text="@string/sequence"
+			android:textColor="@color/blue_dark"
+			android:textSize="18sp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:text="Result 1" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/textSequenceA"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:fontFamily="@font/fira_code_regular"
+			android:textColor="@color/blue_dark"
+			android:textSize="18sp"
+			app:layout_constraintBaseline_toBaselineOf="@+id/labelSequenceA"
+			app:layout_constraintStart_toEndOf="@+id/labelSequenceA"
+			tools:text="Result 1" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelSequenceB"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"
+			android:fontFamily="@font/fira_code_semi_bold"
+			android:text="@string/sequence_b"
+			android:textColor="@color/blue_dark"
+			android:textSize="18sp"
+			android:visibility="invisible"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/labelSequenceA"
+			tools:text="Result 1" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/textSequenceB"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:fontFamily="@font/fira_code_regular"
+			android:visibility="invisible"
+			android:textColor="@color/blue_dark"
+			android:textSize="18sp"
+			app:layout_constraintBaseline_toBaselineOf="@+id/labelSequenceB"
+			app:layout_constraintStart_toEndOf="@+id/labelSequenceB"
+			tools:text="Result 1" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelMatch"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"
+			android:layout_marginTop="10dp"
+			android:fontFamily="@font/fira_code_medium"
+			android:text="@string/w"
+			android:textColor="@color/blue_dark"
+			android:textSize="14sp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/labelSequenceB" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/textMatch"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:fontFamily="@font/fira_code_regular"
+			android:textColor="@color/blue"
+			android:textSize="14sp"
+			app:layout_constraintBaseline_toBaselineOf="@+id/labelMatch"
+			app:layout_constraintStart_toEndOf="@+id/labelMatch"
+			tools:text="-1" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelMismatch"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:fontFamily="@font/fira_code_medium"
+			android:text="@string/k"
+			android:textColor="@color/blue_dark"
+			android:textSize="14sp"
+			app:layout_constraintBaseline_toBaselineOf="@+id/labelMatch"
+			app:layout_constraintStart_toEndOf="@+id/textMatch" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/textMismatch"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:fontFamily="@font/fira_code_regular"
+			android:textColor="@color/blue"
+			android:textSize="14sp"
+			app:layout_constraintBaseline_toBaselineOf="@+id/labelMismatch"
+			app:layout_constraintStart_toEndOf="@+id/labelMismatch"
+			tools:text="-1" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelGap"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:fontFamily="@font/fira_code_medium"
+			android:text="@string/gap"
+			android:textColor="@color/blue_dark"
+			android:visibility="invisible"
+			android:textSize="14sp"
+			app:layout_constraintBaseline_toBaselineOf="@+id/labelMatch"
+			app:layout_constraintStart_toEndOf="@+id/textMismatch" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/textGap"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:fontFamily="@font/fira_code_regular"
+			android:visibility="invisible"
+			android:textColor="@color/blue"
+			android:textSize="14sp"
+			app:layout_constraintBaseline_toBaselineOf="@+id/labelGap"
+			app:layout_constraintStart_toEndOf="@+id/labelGap"
+			tools:text="-1" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/dateText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:layout_marginEnd="10dp"
+			android:fontFamily="@font/fira_code_regular"
+			android:textColor="@color/blue_light"
+			android:textSize="12sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/labelGap"
+			tools:text="22.05.2022. 12:34" />
+
+		<View
+			android:id="@+id/divider"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:alpha="0.5"
+			android:background="@color/blue_light"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

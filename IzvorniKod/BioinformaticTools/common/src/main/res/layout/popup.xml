@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <import type="hr.fer.common.models.enums.PopupActionEnum" />
+        <variable
+            name="popup"
+            type="hr.fer.common.view.popup.Popup" />
+        <variable
+            name="popupModel"
+            type="hr.fer.common.models.enums.PopupEnumModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="250dp"
+        style="@style/View.Rounded"
+        android:theme="@style/ViewTheme.Rounded.White">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/veryBigMargin"
+            android:layout_marginTop="@dimen/veryBigMargin"
+            android:ellipsize="end"
+            android:maxLines="@integer/min_lines"
+            android:text="@{popupModel.title}"
+            android:theme="@style/TextTheme.BlueDark"
+            style="@style/TextStyle.TextBasicSetup"
+            android:textAppearance="@style/TextStyle.Bold.MediumLarge"
+            android:visibility="@{popupModel.title != null ? View.VISIBLE : View.GONE, default=visible}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Cancel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/veryBigMargin"
+            android:layout_marginTop="@dimen/defaultMargin"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textAppearance="@style/TextStyle.Regular.MediumSmall"
+            android:theme="@style/TextTheme.BlueDark"
+            android:visibility="@{popupModel.description != null ? View.VISIBLE : View.GONE, default=visible}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:text="@{popupModel.description}"
+            tools:text="Desription of why to cancel this dialog wooooo shittt"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/firstAction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/veryBigMargin"
+            android:layout_marginTop="@dimen/defaultMargin"
+            android:onClickListener="@{() -> popup.dismiss(PopupActionEnum.FIRST_ACTION)}"
+            android:paddingVertical="@dimen/mediumPadding"
+            app:newTheme="@{popupModel.firstButtonTheme}"
+            android:text="@{popupModel.firstActionText}"
+            style="@style/ButtonStyle"
+            android:textAppearance="@style/TextStyle.Bold.MediumSmall"
+            android:theme="@style/ButtonTheme.SmallRounded.WhiteOnRed.GrayRipple"
+            android:visibility="@{popupModel.firstActionText != null ? View.VISIBLE : View.GONE, default=visible}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            tools:text="@string/yes" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/secondAction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/veryBigMargin"
+            android:layout_marginTop="@dimen/defaultMargin"
+            android:onClickListener="@{() -> popup.dismiss(PopupActionEnum.SECOND_ACTION)}"
+            android:paddingVertical="@dimen/mediumPadding"
+            android:layout_marginBottom="@dimen/veryBigMargin"
+            app:newTheme="@{popupModel.secondButtonTheme}"
+            android:text="@{popupModel.secondActionText}"
+            style="@style/ButtonStyle"
+            android:textAppearance="@style/TextStyle.Bold.MediumSmall"
+            android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlueLight.GrayRipple"
+            android:visibility="@{popupModel.secondActionText != null ? View.VISIBLE : View.GONE, default=visible}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstAction"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="@string/no" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

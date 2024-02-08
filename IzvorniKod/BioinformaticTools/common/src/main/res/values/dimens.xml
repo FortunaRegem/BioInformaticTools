@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Margin dimens
+    <dimen name="ultraSmallMargin">2dp</dimen>
+    <dimen name="smallestMargin">4dp</dimen>
+    <dimen name="smallMargin">6dp</dimen>
+    <dimen name="halfMargin">10dp</dimen>
+    <dimen name="mediumMargin">16dp</dimen>
+    <dimen name="defaultMargin">20dp</dimen>
+    <dimen name="bigMargin">24dp</dimen>
+    <dimen name="veryBigMargin">30dp</dimen>
+    <dimen name="doubleMargin">40dp</dimen>
+    <dimen name="doubleBigMargin">48dp</dimen>
+    <dimen name="extraMargin">60dp</dimen>
+    <dimen name="hugeMargin">90dp</dimen>
+
+    //Padding dimens
+    <dimen name="ultraSmallPadding">2dp</dimen>
+    <dimen name="smallestPadding">4dp</dimen>
+    <dimen name="smallPadding">6dp</dimen>
+    <dimen name="halfPadding">10dp</dimen>
+    <dimen name="halfMediumPadding">13dp</dimen>
+    <dimen name="mediumPadding">16dp</dimen>
+    <dimen name="defaultPadding">20dp</dimen>
+    <dimen name="bigPadding">24dp</dimen>
+
+    //Elevation dimens
+    <dimen name="smallElevation">4dp</dimen>
+    <dimen name="defaultElevation">6dp</dimen>
+    <dimen name="doubleElevation">12dp</dimen>
+    <dimen name="bigElevation">30dp</dimen>
+
+    //Transition dimens
+    <integer name="transitionDuration">350</integer>
+
+    //Text dimens
+    <dimen name="textSizeSmallest">10sp</dimen>
+    <dimen name="textSizeSmall">12sp</dimen>
+    <dimen name="textSizeMediumSmall">14sp</dimen>
+    <dimen name="textSizeMedium">16sp</dimen>
+    <dimen name="textSizeMediumLarge">18sp</dimen>
+    <dimen name="textSizeLarge">22sp</dimen>
+    <dimen name="textSizeMediumBig">30sp</dimen>
+    <dimen name="textSizeLargeBig">32sp</dimen>
+    <dimen name="textSizeBig">34sp</dimen>
+    <dimen name="textSizeVeryLarge">43sp</dimen>
+
+    //Divider dimens
+    <dimen name="minHeight">1dp</dimen>
+
+    //Stroke dimens
+    <dimen name="strokeWidth">2dp</dimen>
+    <dimen name="smallStrokeWidth">1dp</dimen>
+
+    //Radius dimens
+    <dimen name="cornerRadiusSmaller">4dp</dimen>
+    <dimen name="cornerRadiusSmall">8dp</dimen>
+    <dimen name="cornerRadiusRounded">12dp</dimen>
+    <dimen name="cornerRadiusMediumRounded">14dp</dimen>
+    <dimen name="cornerRadiusMoreRounded">18dp</dimen>
+    <dimen name="cornerRadiusCard">24dp</dimen>
+    <dimen name="cornerRadiusCircular">40dp</dimen>
+
+    //Integer dimens
+    <integer name="animation_duration_short">300</integer>
+    <integer name="min_lines">1</integer>
+    <integer name="default_lines">2</integer>
+
+    //Icon dimens
+    <dimen name="iconDimensionsButton">14dp</dimen>
+    <dimen name="iconDimensionsSmall">22dp</dimen>
+    <dimen name="iconDimensionsMedium">28dp</dimen>
+    <dimen name="iconDimensions32">32dp</dimen>
+    <dimen name="iconDimensionsBig">36dp</dimen>
+    <dimen name="iconDimensions42">42dp</dimen>
+    <dimen name="iconDimensionsBigger">48dp</dimen>
+    <dimen name="iconDimensionsVeryBig">63dp</dimen>
+    <dimen name="iconDimensionsLarge">72dp</dimen>
+    <dimen name="iconDimensionVeryLarge">120sp</dimen>
+
+    //Bottom fragment margin
+    <dimen name="fragmentBottomMargin">120dp</dimen>
+
+    //Dimming dimens
+    <fraction name="quarterDim">0.25</fraction>
+</resources>

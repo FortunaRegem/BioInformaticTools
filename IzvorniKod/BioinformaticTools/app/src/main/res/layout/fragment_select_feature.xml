@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<variable
+			name="viewModel"
+			type="hr.fer.bioinformatictools.ui.viewmodel.SelectFeatureViewModel" />
+
+		<variable
+			name="fragment"
+			type="hr.fer.bioinformatictools.ui.view.SelectFeatureFragment" />
+
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<FrameLayout
+			android:id="@+id/frameLayout"
+			style="@style/View.Rounded"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:elevation="@dimen/smallElevation"
+			android:theme="@style/ViewTheme.BottomRounded.Blue"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/doubleMargin"
+				android:layout_marginVertical="@dimen/defaultMargin"
+				style="@style/TextStyle.Bold.Large"
+				android:theme="@style/TextTheme.White"
+				android:text="@string/select_feature"/>
+
+
+		</FrameLayout>
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/recyclerView"
+			style="@style/RecyclerViewStyle.Vertical"
+			items="@{viewModel.features}"
+			owner="@{fragment.viewLifecycleOwner}"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			tools:itemCount="6"
+			tools:listitem="@layout/item_feature"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

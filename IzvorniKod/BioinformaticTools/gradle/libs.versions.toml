@@ -1,0 +1,164 @@
+[versions]
+
+#android build
+appcompat = "1.6.1"
+buildGradle = "8.1.0"
+googleServices = "4.3.15"
+ktxCore = "1.10.1"
+kotlin = "1.9.0"
+ksp = "1.9.21-1.0.15"
+securityCrypto = "1.0.0"
+
+#android project dependencies
+constraintlayout = "2.1.4"
+material = "1.9.0"
+splashScreen = "1.0.1"
+
+#kotlin coroutines
+kotlinxCoroutines = "1.6.4"
+
+#koin
+koin = "3.4.2"
+
+#retrofit
+converterGson = "2.6.0"
+loggingInterceptor = "4.10.0"
+retrofit = "2.9.0"
+
+#room
+room = "2.5.2"
+gson = "2.8.6"
+
+#jetpack navigation
+navigation = "2.6.0"
+
+#architecture
+lifecycle = "2.6.1"
+lifecycleExtensions = "2.2.0"
+
+#firebase
+crashlyticsGradle = "2.9.9"
+firebaseBom = "32.2.3"
+
+#test
+archCore = "2.2.0"
+assertj = "3.12.2"
+junit = "4.13.2"
+testCore = "1.5.0"
+testExtJunit = "1.1.5"
+testExtTruth = "1.5.0"
+testRunner = "1.5.2"
+testEspresso = "3.5.1"
+testOrchestrator = "1.4.2"
+
+#glide
+glide = "4.15.1"
+
+#timber
+timber = "5.0.1"
+
+#viewbinding
+viewbindingDelegate = "1.5.6"
+
+#media3
+media3 = "1.1.1"
+
+[libraries]
+#android
+build-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "buildGradle" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktxCore" }
+google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServices" }
+security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
+
+#android project dependencies
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+splash-screen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashScreen" }
+
+#kotlin coroutines
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
+
+#koin
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-compat = { group = "io.insert-koin", name = "koin-android-compat", version.ref = "koin" }
+
+#retrofit
+retrofit-runtime = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson = { group = "com.google.code.gson", name = "gson", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converterGson" }
+retrofit-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
+
+#room
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+#jetpack navigation
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+navigation-safe-args = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigation" }
+
+#architecture
+lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "lifecycleExtensions" }
+lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+
+#firebase
+firebase-runtime = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
+firebase-crashlytics-gradle = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "crashlyticsGradle" }
+
+#test
+testImpl-junit = { group = "junit", name = "junit", version.ref = "junit" }
+testImpl-assertj = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
+testImpl-arch-core = { group = "androidx.arch.core", name = "core-testing", version.ref = "archCore" }
+atimpl-core = { group = "androidx.test", name = "core", version.ref = "testCore" }
+atimpl-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "testExtJunit" }
+atimpl-ext-truth = { group = "androidx.test.ext", name = "truth", version.ref = "testExtTruth" }
+atimpl-runner = { group = "androidx.test", name = "runner", version.ref = "testRunner" }
+atimpl-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "testEspresso" }
+atimpl-orchestrator = { group = "androidx.test", name = "orchestrator", version.ref = "testOrchestrator" }
+
+#glide
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
+#timber
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref="timber" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "buildGradle" }
+android-library = { id = "com.android.library", version.ref = "buildGradle" }
+android-test = { id = "com.android.test", version.ref = "buildGradle" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsGradle" }
+
+[bundles]
+room = ["room-ktx", "room-runtime", "gson"]
+koin = ["koin-core", "koin-android", "koin-compat"]
+lifecycle = ["lifecycle-extensions", "lifecycle-viewmodel", "lifecycle-livedata", "lifecycle-runtime"]
+navigation = ["navigation-fragment", "navigation-ui"]
+retrofit = ["retrofit-runtime", "retrofit-gson", "retrofit-converter-gson", "retrofit-logging-interceptor"]
+coroutines = ["kotlinx-coroutines-android", "kotlinx-coroutines-test"]
+
+defaultUI = ["material", "constraintlayout", "glide"]
+defaultImpl = ["appcompat", "core-ktx", "security-crypto"]
+defaultTest = ["testImpl-junit", "testImpl-assertj", "testImpl-arch-core"]
+defaultAndroidTest = ["atimpl-core", "atimpl-ext-junit", "atimpl-ext-truth", "atimpl-runner", "atimpl-espresso", "atimpl-orchestrator"]
+
+
+#Templete:
+#  = { group = "", name = "", version.ref = "" }

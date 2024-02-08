@@ -1,0 +1,37 @@
+android {
+    namespace 'hr.fer.bioinformatictools'
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+
+dependencies {
+    //modules
+    implementation(project(":common"))
+    implementation(project(":database"))
+    implementation(project(":navigation"))
+
+    //cores
+    implementation(project(":core:dynamicprogramming"))
+    implementation(project(":core:minimizers"))
+    implementation(project(":core:fmindex"))
+    implementation(project(":core:ukkonensalgorithm"))
+
+    //features
+    implementation(project(":feature:sequencealigner"))
+    implementation(project(":feature:localsequencealigner"))
+    implementation(project(":feature:minimizertable"))
+    implementation(project(":feature:fmindextable"))
+    implementation(project(":feature:ukkonenstree"))
+
+    //room
+    implementation libs.bundles.room
+    annotationProcessor libs.room.compiler
+    ksp libs.room.compiler
+
+    implementation libs.bundles.defaultImpl
+    implementation libs.bundles.defaultUI
+    implementation libs.bundles.navigation
+}

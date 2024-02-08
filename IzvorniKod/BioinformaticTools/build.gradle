@@ -1,0 +1,114 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    apply from: 'appConfig.gradle'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath libs.build.gradle
+    }
+}
+
+plugins {
+    alias(libs.plugins.kotlin.parcelize) apply false
+    alias(libs.plugins.google.services) apply false
+    alias(libs.plugins.firebase.crashlytics) apply false
+    alias(libs.plugins.navigation.safeargs) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.ksp) apply false
+    alias(libs.plugins.kotlin.kapt) apply false
+    alias(libs.plugins.android.application) apply false
+}
+
+subprojects {
+    tasks.register('allDeps', DependencyReportTask) {}
+
+    //Bottom 6 lines of code enable us to have modules separated in different packages like,
+    //so packages aren't label as android libraries and automatically given build.gradle and still use
+    //project module as we do in all projects with subprojects closure
+    //If you want different package for modules just add it's name in moduleList ex. core, feature..)
+    def moduleList = ["feature", "lib", "core"]
+
+    for (mod in moduleList) {
+        if (name.contains(mod)) {
+            return
+        }
+    }
+
+    if (moduleList.contains(name)) { return }
+
+    if (name == 'app') {
+        apply plugin: libs.plugins.android.application.get().pluginId
+    } else {
+        apply plugin: libs.plugins.android.library.get().pluginId
+    }
+    apply plugin: libs.plugins.kotlin.android.get().pluginId
+    apply plugin: libs.plugins.kotlin.ksp.get().pluginId
+    apply plugin: libs.plugins.kotlin.kapt.get().pluginId
+
+    android {
+        compileSdk appConfig.compileSdk
+
+        defaultConfig {
+            minSdk appConfig.minSdk
+            targetSdk appConfig.targetSdk
+            versionCode releaseVersion.code
+            versionName releaseVersion.name
+
+            archivesBaseName = appConfig.appName + "_" + currentDate
+
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        }
+
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+            }
+
+            debug {
+                versionNameSuffix bundleNameSuffixes.debug
+            }
+        }
+
+        compileOptions {
+            sourceCompatibility appConfig.javaVersion
+            targetCompatibility appConfig.javaVersion
+        }
+        kotlinOptions {
+            jvmTarget = '17'
+        }
+
+        buildFeatures {
+            buildConfig = true
+        }
+    }
+
+    kapt {
+        useBuildCache = true
+        correctErrorTypes = true
+    }
+
+    dependencies {
+        implementation fileTree(dir: "libs", include: ["*.jar"])
+
+        //Timber
+        implementation libs.timber
+
+        //Koin
+        implementation libs.bundles.koin
+
+        testImplementation libs.bundles.defaultTest
+        androidTestImplementation libs.bundles.defaultAndroidTest
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

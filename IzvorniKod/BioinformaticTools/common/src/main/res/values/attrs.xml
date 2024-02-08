@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- BackgroundStyle -->
+    <attr name="backgroundStyleColor" format="color" />
+    <attr name="backgroundRippleColor" format="color" />
+    <attr name="backgroundStrokeWidth" format="dimension" />
+    <attr name="backgroundStrokeColor" format="reference" />
+    <attr name="backgroundShapeDrawable" format="reference" />
+    <attr name="backgroundTopLeftRadius" format="dimension" />
+    <attr name="backgroundTopRightRadius" format="dimension" />
+    <attr name="backgroundBottomLeftRadius" format="dimension" />
+    <attr name="backgroundBottomRightRadius" format="dimension" />
+    <attr name="backgroundGradientAngle" format="float" />
+    <attr name="backgroundGradientCenterX" format="float|fraction" />
+    <attr name="backgroundGradientCenterY" format="float|fraction" />
+    <attr name="backgroundGradientSecondColor" format="color" />
+    <attr name="backgroundGradientCenterColor" format="color" />
+    <attr name="backgroundGradientFirstColor" format="color" />
+    <attr name="backgroundGradientType" format="enum" >
+        <enum name="linear" value="0" />
+        <enum name="radial" value="1" />
+        <enum name="sweep"  value="2" />
+    </attr>
+
+    <!-- TextStyle -->
+    <attr name="textStyleColor" format="color" />
+
+
+</resources>

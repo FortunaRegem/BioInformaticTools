@@ -1,0 +1,16 @@
+android {
+    namespace 'hr.fer.common'
+
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    implementation libs.bundles.defaultImpl
+    implementation libs.bundles.defaultUI
+    implementation libs.bundles.navigation
+
+    implementation platform(libs.firebase.runtime)
+    implementation libs.firebase.crashlytics
+}

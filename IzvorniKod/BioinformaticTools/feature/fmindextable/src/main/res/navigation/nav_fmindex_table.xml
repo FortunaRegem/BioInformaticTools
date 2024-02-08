@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/nav_main.xml"
+	app:startDestination="@id/fmIndexFragment">
+
+	<fragment
+		android:id="@+id/fmIndexFragment"
+		android:name="hr.fer.fmindextable.ui.fmindex.view.FMIndexFragment"
+		android:label="FMindexFragment" >
+		<action
+			android:id="@+id/action_fmindexFragment_to_historyFragment"
+			app:destination="@id/historyFragment" />
+		<action
+			android:id="@+id/action_fmindexFragment_to_tableFragment"
+			app:destination="@id/resultFragment" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/historyFragment"
+		android:name="hr.fer.fmindextable.ui.history.view.FMIndexHistoryFragment"
+		android:label="HistoryFragment" >
+		<action
+			android:id="@+id/action_historyFragment_to_resultFragment"
+			app:destination="@id/resultFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/resultFragment"
+		android:name="hr.fer.fmindextable.ui.result.view.FMIndexResultFragment"
+		android:label="TableFragment" >
+		<argument
+			android:name="sequence"
+			app:argType="string" />
+		<argument
+			android:name="pattern"
+			app:argType="string" />
+	</fragment>
+</navigation>

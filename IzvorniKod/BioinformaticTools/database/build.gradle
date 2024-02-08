@@ -1,0 +1,13 @@
+android {
+    namespace 'hr.fer.database'
+}
+
+dependencies {
+    //room
+    implementation libs.bundles.room
+    annotationProcessor libs.room.compiler
+    ksp libs.room.compiler
+
+    //coroutines
+    implementation libs.bundles.coroutines
+}

@@ -1,0 +1,235 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/orange_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!--Background color -->
+        <item name="background">@color/white</item>
+        <item name="backgroundStyleColor">?attr/background</item>
+        <!-- Text color -->
+        <item name="colorSurface">@color/white</item>
+        <item name="snackbarStyle">@style/SnackBarStyle</item>
+
+        <!-- Customize your theme here. -->
+        <item name="colorControlHighlight">@color/blue_light</item>
+
+        <item name="textStyleColor">@color/blue_dark</item>
+        <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
+        <item name="android:textColorSecondary">?attr/colorOnSecondary</item>
+        <item name="android:includeFontPadding">false</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >@color/white_floral</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Hint color -->
+        <item name="android:textColorHint">@color/blue_light</item>
+        <!-- Button Style -->
+        <item name="buttonStyle">@style/ButtonStyle</item>
+        <item name="materialButtonStyle">@style/ButtonStyle</item>
+        <!-- Divider Style -->
+        <item name="materialDividerStyle">@style/DividerTheme</item>
+        <!-- BottomSheet Style -->
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <!-- Divider theme -->
+    <style name="DividerTheme" parent="Widget.Material3.MaterialDivider">
+        <item name="materialThemeOverlay">@style/DividerTheme.MaterialDivider</item>
+    </style>
+
+    <style name="DividerTheme.MaterialDivider">
+        <item name="dividerThickness">@dimen/minHeight</item>
+        <item name="colorOutline">@color/white_floral</item>
+    </style>
+
+    <!-- Button theme -->
+    <style name="ButtonTheme">
+        <item name="backgroundShapeDrawable">@drawable/background_optional_rounded_corners</item>
+    </style>
+
+    <style name="ButtonTheme.Rectangle">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusSmall</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusSmall</item>
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusSmall</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusSmall</item>
+    </style>
+
+    <style name="ButtonTheme.SmallRounded">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusRounded</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusRounded</item>
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusRounded</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusRounded</item>
+    </style>
+
+    <style name="ButtonTheme.MediumRounded">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusMediumRounded</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusMediumRounded</item>
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusMediumRounded</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusMediumRounded</item>
+    </style>
+
+    <style name="ButtonTheme.Rounded">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusRounded</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusRounded</item>
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusRounded</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusRounded</item>
+    </style>
+
+    <style name="ButtonTheme.SmallRounded.WhiteOnBlue">
+        <item name="backgroundStyleColor">@color/blue</item>
+        <item name="textStyleColor">@color/white</item>
+    </style>
+
+    <style name="ButtonTheme.SmallRounded.WhiteOnRed">
+        <item name="backgroundStyleColor">@color/orange_dark</item>
+        <item name="textStyleColor">@color/white</item>
+    </style>
+
+    <style name="ButtonTheme.SmallRounded.BlueOnWhite">
+        <item name="backgroundStyleColor">@color/white</item>
+        <item name="textStyleColor">@color/blue_dark</item>
+    </style>
+
+    <style name="ButtonTheme.SmallRounded.BlueOnWhite.GrayRipple">
+        <item name="backgroundRippleColor">@color/blue_light</item>
+    </style>
+
+    <style name="ButtonTheme.SmallRounded.WhiteOnRed.GrayRipple">
+        <item name="backgroundRippleColor">@color/blue_light</item>
+    </style>
+
+    <style name="ButtonTheme.SmallRounded.WhiteOnBlueLight">
+        <item name="backgroundStyleColor">@color/blue_light</item>
+        <item name="textStyleColor">@color/white</item>
+    </style>
+
+    <style name="ButtonTheme.SmallRounded.WhiteOnBlueLight.GrayRipple">
+        <item name="backgroundRippleColor">@color/blue_light</item>
+    </style>
+
+    <style name="ButtonTheme.Rectangle.BlueOnBlueLight">
+        <item name="backgroundStyleColor">@color/blue_light</item>
+        <item name="textStyleColor">@color/blue</item>
+    </style>
+
+    <style name="ButtonTheme.Rectangle.WhiteOnBlue">
+        <item name="backgroundStyleColor">@color/blue</item>
+        <item name="textStyleColor">@color/white</item>
+    </style>
+
+    <style name="ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple">
+        <item name="backgroundRippleColor">@color/blue_light</item>
+    </style>
+
+    <!-- Text theme -->
+    <style name="TextTheme" />
+
+    <style name="TextTheme.Blue">
+        <item name="textStyleColor">@color/blue</item>
+    </style>
+
+    <style name="TextTheme.BlueLight">
+        <item name="textStyleColor">@color/blue_light</item>
+    </style>
+
+    <style name="TextTheme.BlueDark">
+        <item name="textStyleColor">@color/blue_dark</item>
+    </style>
+
+    <style name="TextTheme.White">
+        <item name="textStyleColor">@color/white</item>
+    </style>
+
+    <!-- View Theme -->
+    <style name="ViewTheme" />
+
+    <style name="ViewTheme.Rectangular">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusSmaller</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusSmaller</item>
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusSmaller</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusSmaller</item>
+    </style>
+
+    <style name="ViewTheme.SmallRounded">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusSmall</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusSmall</item>
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusSmall</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusSmall</item>
+    </style>
+
+    <style name="ViewTheme.MediumRounded">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusMediumRounded</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusMediumRounded</item>
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusMediumRounded</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusMediumRounded</item>
+    </style>
+
+    <style name="ViewTheme.Rounded">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusCard</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusCard</item>
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusCard</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusCard</item>
+    </style>
+    
+    <style name="ViewTheme.Circle">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusCircular</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusCircular</item>
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusCircular</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusCircular</item>
+    </style>
+
+    <style name="ViewTheme.BottomRounded">
+        <item name="backgroundBottomLeftRadius">@dimen/cornerRadiusSmall</item>
+        <item name="backgroundBottomRightRadius">@dimen/cornerRadiusSmall</item>
+    </style>
+
+
+    <style name="ViewTheme.MediumRounded.LightBlue">
+        <item name="backgroundStyleColor">@color/blue_light</item>
+    </style>
+
+
+
+    <style name="ViewTheme.BottomRounded.Blue">
+        <item name="backgroundStyleColor">@color/blue_light</item>
+    </style>
+
+    <style name="ViewTheme.GradientWhite">
+        <item name="backgroundGradientAngle">90</item>
+        <item name="backgroundGradientFirstColor">@color/white</item>
+        <item name="backgroundGradientCenterColor">#AFFF</item>
+        <item name="backgroundGradientSecondColor">@color/transparent</item>
+        <item name="backgroundGradientCenterY">0.8</item>
+    </style>
+
+<!--    <style name="ViewTheme.SmallRounded.White.GrayStroke">-->
+<!--        <item name="backgroundStrokeColor">@color/gray_washed</item>-->
+<!--        <item name="backgroundStrokeWidth">@dimen/minHeight</item>-->
+<!--    </style>-->
+
+    <style name="ViewTheme.Circle.LightBlue">
+        <item name="backgroundStyleColor">@color/blue_light</item>
+    </style>
+
+    <style name="ViewTheme.SmallRounded.White">
+        <item name="backgroundStyleColor">@color/white</item>
+    </style>
+
+    <style name="ViewTheme.Rounded.White">
+        <item name="backgroundStyleColor">@color/white</item>
+    </style>
+
+    <!-- Bottom sheet theme -->
+    <style name="BottomSheetTheme" />
+
+    <style name="BottomSheetTheme.TopCorners">
+        <item name="backgroundTopLeftRadius">@dimen/cornerRadiusCard</item>
+        <item name="backgroundTopRightRadius">@dimen/cornerRadiusCard</item>
+    </style>
+
+</resources>

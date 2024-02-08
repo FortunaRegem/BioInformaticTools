@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="?attr/backgroundStyleColor" />
+            <corners
+                android:topLeftRadius="?attr/backgroundTopLeftRadius"
+                android:topRightRadius="?attr/backgroundTopRightRadius"
+                android:bottomLeftRadius="?attr/backgroundBottomLeftRadius"
+                android:bottomRightRadius="?attr/backgroundBottomRightRadius" />
+            <stroke
+                android:width="?attr/backgroundStrokeWidth"
+                android:color="?attr/backgroundStrokeColor" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <gradient
+                android:angle="?attr/backgroundGradientAngle"
+                android:centerX="?attr/backgroundGradientCenterX"
+                android:centerY="?attr/backgroundGradientCenterY"
+                android:endColor="?attr/backgroundGradientSecondColor"
+                android:startColor="?attr/backgroundGradientFirstColor"
+                android:type="?attr/backgroundGradientType" />
+            <corners
+                android:topLeftRadius="?attr/backgroundTopLeftRadius"
+                android:topRightRadius="?attr/backgroundTopRightRadius"
+                android:bottomLeftRadius="?attr/backgroundBottomLeftRadius"
+                android:bottomRightRadius="?attr/backgroundBottomRightRadius" />
+            <stroke
+                android:width="?attr/backgroundStrokeWidth"
+                android:color="?attr/backgroundStrokeColor" />
+        </shape>
+    </item>
+</layer-list>

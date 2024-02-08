@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+		<variable
+			name="viewModel"
+			type="hr.fer.ukkonenstree.ui.result.viewmodel.TreeResultViewModel" />
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<hr.fer.ukkonenstree.ui.result.view.treeview.TreeView
+			android:id="@+id/treeView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:treeData="@{viewModel.result}"
+			/>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonBack"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginStart="30dp"
+			android:layout_marginBottom="30dp"
+			app:icon="@drawable/ic_rewind"
+			app:iconPadding="0dp"
+			app:iconTint="@color/white"
+			app:iconGravity="textTop"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/resultView"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/resultView"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"
+			android:layout_marginEnd="10dp"
+			android:padding="10dp"
+			android:clickable="false"
+			android:focusable="false"
+			style="@style/View.Rounded"
+			android:theme="@style/ViewTheme.SmallRounded.White"
+			app:layout_constraintBottom_toBottomOf="@+id/buttonBack"
+			app:layout_constraintEnd_toStartOf="@id/buttonNext"
+			app:layout_constraintStart_toEndOf="@id/buttonBack"
+			app:layout_constraintTop_toTopOf="@+id/buttonBack">
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/activeNodeLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/fira_code_medium"
+				android:textColor="@color/blue_dark"
+				android:textSize="14sp"
+				android:text="@string/active_node"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/activeNodeText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/fira_code_medium"
+				android:textColor="#FF4444"
+				android:textSize="14sp"
+				android:text="@{viewModel.activeNode}"
+				app:layout_constraintBottom_toBottomOf="@+id/activeNodeLabel"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/activeLengthLabel"
+				app:layout_constraintTop_toTopOf="@+id/activeNodeLabel"
+				tools:text="ACT" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/activeEdgeLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/fira_code_medium"
+				android:textColor="@color/blue_dark"
+				android:textSize="14sp"
+				android:text="@string/active_edge"
+				android:layout_marginTop="@dimen/smallMargin"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/activeNodeLabel" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/activeEdgeText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/fira_code_medium"
+				android:textColor="#AA44FF"
+				android:textSize="14sp"
+				android:text="@{viewModel.activeEdge}"
+				app:layout_constraintBottom_toBottomOf="@+id/activeEdgeLabel"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/activeLengthLabel"
+				app:layout_constraintTop_toTopOf="@+id/activeEdgeLabel"
+				tools:text="ACT" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/activeLengthLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/fira_code_medium"
+				android:textColor="@color/blue_dark"
+				android:textSize="14sp"
+				android:text="@string/active_length"
+				android:layout_marginTop="@dimen/smallMargin"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/activeEdgeLabel" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/activeLengthText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/fira_code_medium"
+				android:textColor="#BB8888"
+				android:textSize="14sp"
+				android:text="@{viewModel.activeLength}"
+				app:layout_constraintBottom_toBottomOf="@+id/activeLengthLabel"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/activeLengthLabel"
+				app:layout_constraintTop_toTopOf="@+id/activeLengthLabel"
+				tools:text="ACT" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/reminderLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/fira_code_medium"
+				android:textColor="@color/blue_dark"
+				android:textSize="14sp"
+				android:text="@string/reminder"
+				android:layout_marginTop="@dimen/smallMargin"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/activeLengthLabel" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/reminderText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/fira_code_medium"
+				android:textColor="#88DD88"
+				android:textSize="14sp"
+				android:text="@{viewModel.reminder}"
+				app:layout_constraintBottom_toBottomOf="@+id/reminderLabel"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/activeLengthLabel"
+				app:layout_constraintTop_toTopOf="@+id/reminderLabel"
+				tools:text="ACT" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonNext"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginEnd="30dp"
+			android:layout_marginBottom="30dp"
+			app:icon="@drawable/ic_forward"
+			app:iconPadding="0dp"
+			app:iconTint="@color/white"
+			app:iconGravity="textTop"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@id/resultView" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

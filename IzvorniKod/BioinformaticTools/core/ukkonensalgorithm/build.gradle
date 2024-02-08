@@ -1,0 +1,33 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    namespace 'hr.fer.ukkonensalgorithm'
+
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    implementation(project(":common"))
+    implementation(project(":database"))
+    implementation(project(":network"))
+
+    implementation(project(":feature:ukkonenstree"))
+
+
+    implementation libs.bundles.defaultImpl
+    implementation libs.bundles.defaultUI
+    implementation libs.bundles.navigation
+
+    //room
+    implementation libs.bundles.room
+    annotationProcessor libs.room.compiler
+    ksp libs.room.compiler
+
+    implementation platform(libs.firebase.runtime)
+    implementation libs.firebase.crashlytics
+}

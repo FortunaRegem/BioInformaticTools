@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+		<variable
+			name="viewModel"
+			type="hr.fer.localsequencealigner.ui.aligner.viewmodel.LocalTableViewModel" />
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<hr.fer.common.view.connectedtable.ConnectedTableView
+			android:id="@+id/table"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:tableData="@{viewModel.tableData}"/>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonBack"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginStart="30dp"
+			android:layout_marginBottom="30dp"
+			app:icon="@drawable/ic_rewind"
+			app:iconPadding="0dp"
+			app:iconTint="@color/white"
+			app:iconGravity="textTop"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/resultView"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<HorizontalScrollView
+			android:id="@+id/resultView"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"
+			android:layout_marginEnd="10dp"
+			android:padding="10dp"
+			android:clickable="false"
+			android:focusable="false"
+			style="@style/View.Rounded"
+			android:theme="@style/ViewTheme.SmallRounded.White"
+			app:layout_constraintBottom_toBottomOf="@+id/buttonBack"
+			app:layout_constraintEnd_toStartOf="@id/buttonNext"
+			app:layout_constraintStart_toEndOf="@id/buttonBack"
+			app:layout_constraintTop_toTopOf="@+id/buttonBack">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/firstResultLine"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/fira_code_medium"
+					android:text="@{viewModel.currentResult.resultLineSequenceA}"
+					android:textColor="@color/blue_dark"
+					android:textSize="14sp"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					tools:text="ATCGCTACG" />
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/secondResultLine"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/fira_code_medium"
+					android:text="@{viewModel.currentResult.resultLIneActionsTaken}"
+					android:textColor="@color/blue_dark"
+					android:textSize="14sp"
+					app:layout_constraintEnd_toEndOf="@+id/firstResultLine"
+					app:layout_constraintHorizontal_bias="0.0"
+					app:layout_constraintStart_toStartOf="@+id/firstResultLine"
+					app:layout_constraintTop_toBottomOf="@+id/firstResultLine"
+					tools:text="ACTGC" />
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/thirdResultLine"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/fira_code_medium"
+					android:text="@{viewModel.currentResult.resultLineSequenceB}"
+					android:textColor="@color/blue_dark"
+					android:textSize="14sp"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="@+id/firstResultLine"
+					app:layout_constraintHorizontal_bias="0.0"
+					app:layout_constraintStart_toStartOf="@+id/firstResultLine"
+					app:layout_constraintTop_toBottomOf="@+id/secondResultLine"
+					tools:text="ACTGC" />
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+		</HorizontalScrollView>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonNext"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginEnd="30dp"
+			android:layout_marginBottom="30dp"
+			app:icon="@drawable/ic_forward"
+			app:iconPadding="0dp"
+			app:iconTint="@color/white"
+			app:iconGravity="textTop"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@id/resultView" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

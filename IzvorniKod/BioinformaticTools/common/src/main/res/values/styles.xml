@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Button Styles -->
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/background_ripple</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lines">@integer/min_lines</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@null</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
+    <!-- Bottom Sheet Styles -->
+    <style name="AppBottomSheetDialogTheme" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+        <item name="android:theme">@style/BottomSheetTheme.TopCorners</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">@fraction/quarterDim</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/background_optional_rounded_corners</item>
+    </style>
+
+    <!-- Bottom Navigation Styles -->
+    <style name="BottomNavigationStyle">
+        <item name="android:background">@color/white</item>
+        <item name="elevation">0dp</item>
+        <item name="android:padding">@dimen/smallestPadding</item>
+        <item name="itemIconSize">@dimen/iconDimensionsMedium</item>
+        <item name="itemIconTint">?attr/colorOnPrimary</item>
+        <item name="checkedIconTint">?attr/colorSecondary</item>
+        <item name="labelVisibilityMode">unlabeled</item>
+    </style>
+
+    <!-- SnackBar Styles -->
+    <style name="SnackBarStyle" parent="@style/Widget.MaterialComponents.Snackbar">
+        <item name="backgroundTint">@color/black</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="TextStyle">
+        <item name="android:textColor">?attr/textStyleColor</item>
+    </style>
+
+    <style name="TextStyle.Bold">
+        <item name="android:fontFamily">@font/fira_code_bold</item>
+    </style>
+
+    <style name="TextStyle.SemiBold">
+        <item name="android:fontFamily">@font/fira_code_semi_bold</item>
+    </style>
+
+    <style name="TextStyle.Regular">
+        <item name="android:fontFamily">@font/fira_code_regular</item>
+    </style>
+
+    <style name="TextStyle.Bold.Big">
+        <item name="android:textSize">@dimen/textSizeBig</item>
+    </style>
+
+    <style name="TextStyle.Bold.MediumBig">
+        <item name="android:textSize">@dimen/textSizeMediumBig</item>
+    </style>
+    
+    <style name="TextStyle.Bold.MediumLarge">
+        <item name="android:textSize">@dimen/textSizeMediumLarge</item>
+    </style>
+
+    <style name="TextStyle.Bold.Large">
+        <item name="android:textSize">@dimen/textSizeLarge</item>
+    </style>
+
+    <style name="TextStyle.Bold.Medium">
+        <item name="android:textSize">@dimen/textSizeMedium</item>
+    </style>
+
+    <style name="TextStyle.Bold.MediumSmall">
+        <item name="android:textSize">@dimen/textSizeMediumSmall</item>
+    </style>
+
+    <style name="TextStyle.Bold.Small">
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+
+    <style name="TextStyle.SemiBold.Large">
+        <item name="android:textSize">@dimen/textSizeLarge</item>
+    </style>
+
+    <style name="TextStyle.SemiBold.MediumLarge">
+        <item name="android:textSize">@dimen/textSizeMediumLarge</item>
+    </style>
+
+    <style name="TextStyle.SemiBold.Medium">
+        <item name="android:textSize">@dimen/textSizeMedium</item>
+    </style>
+
+    <style name="TextStyle.SemiBold.MediumSmall">
+        <item name="android:textSize">@dimen/textSizeMediumSmall</item>
+    </style>
+
+    <style name="TextStyle.Regular.LargeBig">
+        <item name="android:textSize">@dimen/textSizeLargeBig</item>
+    </style>
+
+    <style name="TextStyle.Regular.Big">
+        <item name="android:textSize">@dimen/textSizeBig</item>
+    </style>
+
+    <style name="TextStyle.Regular.MediumLarge">
+        <item name="android:textSize">@dimen/textSizeMediumLarge</item>
+    </style>
+
+    <style name="TextStyle.Regular.Medium">
+        <item name="android:textSize">@dimen/textSizeMedium</item>
+    </style>
+
+    <style name="TextStyle.Regular.MediumSmall">
+        <item name="android:textSize">@dimen/textSizeMediumSmall</item>
+    </style>
+
+    <style name="TextStyle.Regular.Small">
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+
+    <style name="TextStyle.TextBasicSetup">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">@integer/min_lines</item>
+    </style>
+
+    <style name="TextStyle.TextBasicSetup.Clickable">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="TextStyle.TextBasicSetup.DoubleLiner">
+        <item name="android:maxLines">@integer/default_lines</item>
+    </style>
+
+    <style name="TextStyle.ClickableTextView">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Recycler View Styles -->
+    <style name="RecyclerViewStyle">
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <style name="RecyclerViewStyle.Vertical">
+        <item name="android:orientation">vertical</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="RecyclerViewStyle.Horizontal">
+        <item name="android:orientation">horizontal</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="RecyclerViewStyle.Grid">
+        <item name="android:orientation">vertical</item>
+        <item name="layoutManager">androidx.recyclerview.widget.GridLayoutManager</item>
+    </style>
+
+    <!-- View Styles -->
+    <style name="View" />
+
+    <style name="View.Rounded">
+        <item name="android:background">@drawable/background_optional_rounded_corners</item>
+    </style>
+
+    <!-- Layout style -->
+    <style name="LayoutTheme" />
+
+    <style name="LayoutTheme.Fragment">
+        <item name="android:paddingBottom">@dimen/fragmentBottomMargin</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+</resources>

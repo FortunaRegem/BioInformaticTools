@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "BioinformaticTools"
+include ':app'
+include ':database'
+include ':network'
+include ':navigation'
+include ':common'
+include ':core:dynamicprogramming'
+include ':core:minimizers'
+include ':feature:sequencealigner'
+include ':feature:localsequencealigner'
+include ':feature:minimizertable'
+include ':core:fmindex'
+include ':feature:fmindextable'
+include ':core:ukkonensalgorithm'
+include ':feature:ukkonenstree'

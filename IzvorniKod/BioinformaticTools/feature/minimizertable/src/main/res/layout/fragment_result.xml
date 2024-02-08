@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<data>
+		<variable
+			name="viewModel"
+			type="hr.fer.minimizertable.ui.result.viewmodel.ResultViewModel" />
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<hr.fer.minimizertable.ui.result.view.tableview.TableView
+			android:id="@+id/tableView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:tableData="@{viewModel.result}"/>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonBack"
+			android:layout_width="0dp"
+			android:layout_height="60dp"
+			android:layout_marginStart="30dp"
+			android:layout_marginEnd="15dp"
+			android:layout_marginBottom="30dp"
+			app:icon="@drawable/ic_rewind"
+			app:iconPadding="0dp"
+			app:iconTint="@color/white"
+			app:iconGravity="textTop"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/buttonPlay"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonPlay"
+			android:layout_width="0dp"
+			android:layout_height="60dp"
+			android:layout_marginStart="15dp"
+			android:layout_marginEnd="15dp"
+			android:layout_marginBottom="30dp"
+			app:icon="@drawable/ic_play"
+			app:iconPadding="0dp"
+			app:iconTint="@color/white"
+			app:iconGravity="textTop"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/buttonNext"
+			app:layout_constraintStart_toEndOf="@id/buttonBack" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonNext"
+			android:layout_width="0dp"
+			android:layout_height="60dp"
+			android:layout_marginStart="15dp"
+			android:layout_marginEnd="15dp"
+			android:layout_marginBottom="30dp"
+			app:icon="@drawable/ic_forward"
+			app:iconPadding="0dp"
+			app:iconTint="@color/white"
+			app:iconGravity="textTop"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/buttonEnd"
+			app:layout_constraintStart_toEndOf="@id/buttonPlay" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonEnd"
+			android:layout_width="0dp"
+			android:layout_height="60dp"
+			android:layout_marginStart="15dp"
+			android:layout_marginEnd="30dp"
+			android:layout_marginBottom="30dp"
+			app:icon="@drawable/ic_arrow_right"
+			app:iconPadding="0dp"
+			app:iconTint="@color/white"
+			app:iconGravity="textTop"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@id/buttonNext" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

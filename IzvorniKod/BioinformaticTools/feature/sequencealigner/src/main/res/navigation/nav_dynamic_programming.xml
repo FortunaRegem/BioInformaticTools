@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/nav_main.xml"
+	app:startDestination="@id/alignerFragment">
+
+	<fragment
+		android:id="@+id/alignerFragment"
+		android:name="hr.fer.sequencealigner.ui.aligner.view.AlignerFragment"
+		android:label="AlignerFragment" >
+		<action
+			android:id="@+id/action_alignerFragment_to_historyFragment"
+			app:destination="@id/historyFragment" />
+		<action
+			android:id="@+id/action_alignerFragment_to_tableFragment"
+			app:destination="@id/tableFragment" />
+		<argument
+			android:name="sequenceA"
+			app:argType="string"
+			app:nullable="true"
+			android:defaultValue="@null" />
+		<argument
+			android:name="sequenceB"
+			app:argType="string"
+			app:nullable="true"
+			android:defaultValue="@null" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/historyFragment"
+		android:name="hr.fer.sequencealigner.ui.history.view.HistoryFragment"
+		android:label="HistoryFragment" >
+		<action
+			android:id="@+id/action_historyFragment_to_alignerFragment"
+			app:destination="@id/alignerFragment"
+			app:popUpTo="@id/alignerFragment"
+			app:popUpToInclusive="true" />
+	</fragment>
+	<fragment
+		android:id="@+id/tableFragment"
+		android:name="hr.fer.sequencealigner.ui.aligner.view.TableFragment"
+		android:label="TableFragment" >
+		<argument
+			android:name="sequenceA"
+			app:argType="string" />
+		<argument
+			android:name="sequenceB"
+			app:argType="string" />
+	</fragment>
+</navigation>

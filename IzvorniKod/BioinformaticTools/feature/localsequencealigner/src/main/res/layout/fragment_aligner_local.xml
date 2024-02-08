@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<data>
+		<import type="android.view.View" />
+
+		<variable
+			name="viewModel"
+			type="hr.fer.localsequencealigner.ui.aligner.viewmodel.LocalAlignerViewModel" />
+
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/logoimage"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:layout_marginTop="40dp"
+			android:src="@drawable/ic_dna"
+			android:tint="@color/blue_dark"
+			app:layout_constraintEnd_toStartOf="@+id/appCompatTextView"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintHorizontal_chainStyle="packed"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/appCompatTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:fontFamily="@font/fira_code_medium"
+			android:text="@string/local_sequence_aligner"
+			android:textColor="@color/blue_dark"
+			android:textSize="24sp"
+			app:layout_constraintBottom_toBottomOf="@+id/logoimage"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toEndOf="@+id/logoimage"
+			app:layout_constraintTop_toTopOf="@+id/logoimage" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelSequenceA"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="40dp"
+			android:layout_marginTop="60dp"
+			android:text="@string/sequence_a"
+			android:textColor="@color/blue_dark"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/logoimage" />
+
+		<androidx.appcompat.widget.AppCompatEditText
+			android:id="@+id/inputSequenceA"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="30dp"
+			android:layout_marginTop="4dp"
+			android:layout_marginEnd="30dp"
+			style="@style/View.Rounded"
+			android:theme="@style/ViewTheme.SmallRounded"
+			android:elevation="1dp"
+			android:hint="@string/input_sequence_a"
+			android:inputType="textCapCharacters"
+			android:maxLines="6"
+			android:padding="10dp"
+			android:textColor="@color/blue_dark"
+			android:textColorHighlight="@color/blue_light"
+			android:textColorHint="@color/blue_light"
+			android:textSize="16sp"
+			android:text="@={viewModel.sequenceA}"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/labelSequenceA" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelSequenceB"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="40dp"
+			android:layout_marginTop="20dp"
+			android:text="@string/sequence_b"
+			android:textColor="@color/blue_dark"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/inputSequenceA" />
+
+		<androidx.appcompat.widget.AppCompatEditText
+			android:id="@+id/inputSequenceB"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="30dp"
+			android:layout_marginTop="4dp"
+			android:layout_marginEnd="30dp"
+			style="@style/View.Rounded"
+			android:theme="@style/ViewTheme.SmallRounded"
+			android:elevation="1dp"
+			android:hint="@string/input_sequence_b"
+			android:inputType="textCapCharacters"
+			android:maxLines="6"
+			android:padding="10dp"
+			android:textColor="@color/blue_dark"
+			android:textColorHighlight="@color/blue_light"
+			android:textColorHint="@color/blue_light"
+			android:textSize="16sp"
+			android:text="@={viewModel.sequenceB}"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/labelSequenceB" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelMatch"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"
+			android:layout_marginTop="20dp"
+			android:text="@string/match"
+			android:textColor="@color/blue_dark"
+			app:layout_constraintHorizontal_chainStyle="spread"
+			app:layout_constraintStart_toStartOf="@+id/inputMatch"
+			app:layout_constraintTop_toBottomOf="@+id/inputSequenceB" />
+
+		<androidx.appcompat.widget.AppCompatEditText
+			android:id="@+id/inputMatch"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="30dp"
+			android:layout_marginTop="4dp"
+			style="@style/View.Rounded"
+			android:theme="@style/ViewTheme.SmallRounded"
+			android:elevation="1dp"
+			android:inputType="numberSigned"
+			android:maxLength="5"
+			android:maxLines="1"
+			android:padding="10dp"
+			android:textColor="@color/black"
+			android:textColorHighlight="@color/blue_light"
+			android:textColorHint="@color/blue_light"
+			android:textSize="16sp"
+			android:imeOptions="actionNext"
+			android:text="@={viewModel.match}"
+			app:layout_constraintEnd_toStartOf="@+id/inputMismatch"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintHorizontal_chainStyle="spread_inside"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/labelMatch" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelMismatch"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"
+			android:text="@string/mismatch"
+			android:textColor="@color/blue_dark"
+			app:layout_constraintBaseline_toBaselineOf="@+id/labelMatch"
+			app:layout_constraintStart_toStartOf="@+id/inputMismatch" />
+
+		<androidx.appcompat.widget.AppCompatEditText
+			android:id="@+id/inputMismatch"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="40dp"
+			android:layout_marginTop="4dp"
+			style="@style/View.Rounded"
+			android:theme="@style/ViewTheme.SmallRounded"
+			android:elevation="1dp"
+			android:inputType="numberSigned"
+			android:maxLength="5"
+			android:maxLines="1"
+			android:padding="10dp"
+			android:textColor="@color/black"
+			android:textColorHighlight="@color/blue_light"
+			android:textColorHint="@color/blue_light"
+			android:textSize="16sp"
+			android:imeOptions="actionNext"
+			android:text="@={viewModel.mismatch}"
+			app:layout_constraintEnd_toStartOf="@+id/inputGap"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toEndOf="@+id/inputMatch"
+			app:layout_constraintTop_toBottomOf="@+id/labelMismatch" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/labelGap"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"
+			android:text="@string/gap"
+			android:textColor="@color/blue_dark"
+			app:layout_constraintBaseline_toBaselineOf="@+id/labelMatch"
+			app:layout_constraintStart_toStartOf="@+id/inputGap" />
+
+		<androidx.appcompat.widget.AppCompatEditText
+			android:id="@+id/inputGap"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="40dp"
+			android:layout_marginTop="4dp"
+			android:layout_marginEnd="30dp"
+			style="@style/View.Rounded"
+			android:theme="@style/ViewTheme.SmallRounded"
+			android:elevation="1dp"
+			android:inputType="numberSigned"
+			android:maxLength="5"
+			android:maxLines="1"
+			android:padding="10dp"
+			android:textColor="@color/black"
+			android:textColorHighlight="@color/blue_light"
+			android:textColorHint="@color/blue_light"
+			android:textSize="16sp"
+			android:imeOptions="actionDone"
+			android:text="@={viewModel.gap}"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toEndOf="@+id/inputMismatch"
+			app:layout_constraintTop_toBottomOf="@+id/labelGap" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonHistory"
+			android:layout_width="0dp"
+			android:layout_height="50dp"
+			android:layout_marginStart="30dp"
+			android:layout_marginEnd="30dp"
+			android:layout_marginBottom="4dp"
+			android:text="@string/show_history"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:elevation="1dp"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.BlueOnWhite.GrayRipple"
+			app:layout_constraintBottom_toTopOf="@id/buttonAlign"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/buttonAlign"
+			android:layout_width="0dp"
+			android:layout_height="70dp"
+			android:layout_marginStart="30dp"
+			android:layout_marginEnd="30dp"
+			android:layout_marginBottom="30dp"
+			android:text="@string/calculate_distance"
+			app:cornerRadius="8dp"
+			style="@style/ButtonStyle"
+			android:textAppearance="@style/TextStyle.SemiBold.MediumSmall"
+			android:textAllCaps="true"
+			android:theme="@style/ButtonTheme.SmallRounded.WhiteOnBlue.GrayRipple"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
