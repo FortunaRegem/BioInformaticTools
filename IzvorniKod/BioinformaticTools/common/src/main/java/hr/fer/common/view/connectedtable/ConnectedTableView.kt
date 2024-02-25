@@ -480,7 +480,7 @@ class ConnectedTableView : View, ScaleGestureDetector.OnScaleGestureListener {
 		for (i in firstCellPosition until currentActiveMainPath.size) {
 			currentActiveMainPath[i].setMainPathActive(false)
 		}
-		currentActiveMainPath = currentActiveMainPath.dropLast(currentActiveMainPath.size - firstCellPosition) as ArrayList<CellData>
+		currentActiveMainPath = ArrayList(currentActiveMainPath.dropLast(currentActiveMainPath.size - firstCellPosition))
 
 		val firstCell = currentActiveMainPath[firstCellPosition - 1]
 		val startPosition = firstCell.moveMainPathForward()
@@ -513,7 +513,7 @@ class ConnectedTableView : View, ScaleGestureDetector.OnScaleGestureListener {
 		for (i in firstCellPosition until currentActiveMainPath.size) {
 			currentActiveMainPath[i].setMainPathActive(false)
 		}
-		currentActiveMainPath = currentActiveMainPath.dropLast(currentActiveMainPath.size - firstCellPosition) as ArrayList<CellData>
+		currentActiveMainPath = ArrayList(currentActiveMainPath.dropLast(currentActiveMainPath.size - firstCellPosition))
 
 		val firstCell = currentActiveMainPath[firstCellPosition - 1]
 		val startPosition = firstCell.moveMainPathBackwards()
